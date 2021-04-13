@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-var passport = require('passport');
+const passport = require('passport');
 
 //gives access to variables in .env file
 require('dotenv').config();
