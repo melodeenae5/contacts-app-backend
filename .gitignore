@@ -1,5 +1,7 @@
 node_modules
 .env
+id_rsa_priv.pem
+id_rsa_pub.pem
 
 #the following taken from Github doc on .gitignore files
 # Compiled source #

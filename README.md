@@ -1,4 +1,4 @@
-# [Name of Contacts App]
+# Names 'n Stuff - server side
 
 ## Description
 
