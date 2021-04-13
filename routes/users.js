@@ -4,8 +4,13 @@ const User = mongoose.model('User');
 const passport = require('passport');
 const utils = require('../lib/utils');
 
-// TODO
-router.get('/protected', (req, res, next) => {});
+router.get(
+	'/protected',
+	passport.authenticate('jwt', { session: false }),
+	(req, res, next) => {
+		res.status(200).json({ success: true, msg: 'You are authorized!' });
+	}
+);
 
 router.post('/login', function (req, res, next) {
 	User.findOne({ username: req.body.username })
@@ -48,6 +53,9 @@ router.post('/register', function (req, res, next) {
 		username: req.body.username,
 		hash: hash,
 		salt: salt,
+		firstName: req.body.firstName,
+		lastName: req.body.lastName,
+		email: req.body.email,
 	});
 	try {
 		newUser.save().then((user) => {

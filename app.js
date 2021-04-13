@@ -14,6 +14,7 @@ require('./config/db');
 
 //loads models
 require('./models/User');
+require('./models/Contact');
 
 //pass global passport object into configuration function
 require('./config/passport')(passport);
