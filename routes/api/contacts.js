@@ -38,7 +38,53 @@ router.post(
 	'/',
 	passport.authenticate('jwt', { session: false }),
 	(req, res) => {
-		Contact.create(req.body)
+		Contact.create({
+			user_id: req.body.user_id,
+			firstName: req.body.firstName,
+			lastName: req.body.lastName,
+			nickName: req.body.nickName,
+			phone: [
+				{ phoneType: req.body.phoneType1, phoneNumber: req.body.phoneNumber1 },
+				{ phoneType: req.body.phoneType2, phoneNumber: req.body.phoneNumber2 },
+			],
+			email: [
+				{
+					emailType: req.body.emailType1,
+					emailAddress: req.body.emailAddress1,
+				},
+				{
+					emailType: req.body.emailType2,
+					emailAddress: req.body.emailAddress2,
+				},
+			],
+			category: req.body.category,
+			workInfo: { jobTitle: req.body.jobTitle, company: req.body.company },
+			addresses: [
+				{ addressType: req.body.addressType1, address: req.body.address1 },
+				{ addressType: req.body.addressType2, address: req.body.address2 },
+			],
+			importantDates: [
+				{ label: req.body.label1, date: req.body.date1 },
+				{ label: req.body.label2, date: req.body.date2 },
+			],
+			website: req.body.website,
+			whereWeMet: req.body.whereWeMet,
+			whatWeTalkedAbout: req.body.whatWeTalkedAbout,
+			likes: [req.body.like1, req.body.like2, req.body.like3, req.body.like4],
+			disikes: [
+				req.body.dislike1,
+				req.body.dislike2,
+				req.body.dislike3,
+				req.body.dislike4,
+			],
+			passions: [
+				req.body.passion1,
+				req.body.passion2,
+				req.body.passion3,
+				req.body.passion4,
+			],
+			notes: req.body.notes,
+		})
 			.then((contact) =>
 				res
 					.status(201)
@@ -55,7 +101,53 @@ router.put(
 	'/:id',
 	passport.authenticate('jwt', { session: false }),
 	(req, res) => {
-		Contact.findByIdAndUpdate(req.params.id, req.body)
+		Contact.findByIdAndUpdate(req.params.id, {
+			user_id: req.body.user_id,
+			firstName: req.body.firstName,
+			lastName: req.body.lastName,
+			nickName: req.body.nickName,
+			phone: [
+				{ phoneType: req.body.phoneType1, phoneNumber: req.body.phoneNumber1 },
+				{ phoneType: req.body.phoneType2, phoneNumber: req.body.phoneNumber2 },
+			],
+			email: [
+				{
+					emailType: req.body.emailType1,
+					emailAddress: req.body.emailAddress1,
+				},
+				{
+					emailType: req.body.emailType2,
+					emailAddress: req.body.emailAddress2,
+				},
+			],
+			category: req.body.category,
+			workInfo: { jobTitle: req.body.jobTitle, company: req.body.company },
+			addresses: [
+				{ addressType: req.body.addressType1, address: req.body.address1 },
+				{ addressType: req.body.addressType2, address: req.body.address2 },
+			],
+			importantDates: [
+				{ label: req.body.label1, date: req.body.date1 },
+				{ label: req.body.label2, date: req.body.date2 },
+			],
+			website: req.body.website,
+			whereWeMet: req.body.whereWeMet,
+			whatWeTalkedAbout: req.body.whatWeTalkedAbout,
+			likes: [req.body.like1, req.body.like2, req.body.like3, req.body.like4],
+			disikes: [
+				req.body.dislike1,
+				req.body.dislike2,
+				req.body.dislike3,
+				req.body.dislike4,
+			],
+			passions: [
+				req.body.passion1,
+				req.body.passion2,
+				req.body.passion3,
+				req.body.passion4,
+			],
+			notes: req.body.notes,
+		})
 			.then((contact) =>
 				res
 					.status(200)

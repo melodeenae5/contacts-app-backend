@@ -31,6 +31,8 @@ router.post('/login', function (req, res, next) {
 					success: true,
 					token: tokenObject.token,
 					expiresIn: tokenObject.expires,
+					user_id: user._id,
+					username: user.username,
 				});
 			} else {
 				res
@@ -66,6 +68,8 @@ router.post('/register', function (req, res, next) {
 				user: user,
 				token: jwt.token,
 				expiresIn: jwt.expires,
+				user_id: user._id,
+				username: user.username,
 			});
 		});
 	} catch (err) {
