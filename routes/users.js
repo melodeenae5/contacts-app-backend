@@ -31,6 +31,7 @@ router.post('/login', function (req, res, next) {
 					success: true,
 					token: tokenObject.token,
 					expiresIn: tokenObject.expires,
+					user: user,
 					user_id: user._id,
 					username: user.username,
 				});
