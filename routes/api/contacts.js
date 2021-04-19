@@ -8,12 +8,11 @@ const passport = require('passport');
 router.get('/test', (req, res) => res.send('contacts route testing!'));
 
 //another test route
-
 router.get(
 	'/working',
 	passport.authenticate('jwt', { session: false }),
 	(req, res) => {
-		res.json({ contact: 'contact data' });
+		res.json({ user_id: req.body.user_id });
 	}
 );
 
