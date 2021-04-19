@@ -12,7 +12,7 @@ router.get(
 	'/',
 	passport.authenticate('jwt', { session: false }),
 	(req, res) => {
-		Contact.find({ user_id: req.body.user_id })
+		Contact.find({ user_id: req.user._id })
 			.then((contacts) => res.json(contacts))
 			.catch((err) =>
 				res.status(404).json({ success: false, msg: 'Error finding contacts' })
