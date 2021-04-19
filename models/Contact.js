@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const ContactSchema = new mongoose.Schema({
-	user_id: Object,
+	user_id: String,
 	firstName: { type: String, required: true },
 	lastName: String,
 	nickName: String,
