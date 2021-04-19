@@ -71,7 +71,7 @@ router.post(
 			whereWeMet: req.body.whereWeMet,
 			whatWeTalkedAbout: req.body.whatWeTalkedAbout,
 			likes: [req.body.like1, req.body.like2, req.body.like3, req.body.like4],
-			disikes: [
+			dislikes: [
 				req.body.dislike1,
 				req.body.dislike2,
 				req.body.dislike3,
@@ -134,7 +134,7 @@ router.put(
 			whereWeMet: req.body.whereWeMet,
 			whatWeTalkedAbout: req.body.whatWeTalkedAbout,
 			likes: [req.body.like1, req.body.like2, req.body.like3, req.body.like4],
-			disikes: [
+			dislikes: [
 				req.body.dislike1,
 				req.body.dislike2,
 				req.body.dislike3,

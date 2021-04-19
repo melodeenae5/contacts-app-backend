@@ -15,7 +15,7 @@ const ContactSchema = new mongoose.Schema({
 	whereWeMet: String,
 	whatWeTalkedAbout: String,
 	likes: [{ type: String }],
-	disikes: [{ type: String }],
+	dislikes: [{ type: String }],
 	passions: [{ type: String }],
 	notes: String,
 });
