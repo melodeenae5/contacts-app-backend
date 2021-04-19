@@ -7,6 +7,16 @@ const passport = require('passport');
 //test route
 router.get('/test', (req, res) => res.send('contacts route testing!'));
 
+//another test route
+
+router.get(
+	'/working',
+	passport.authenticate('jwt', { session: false }),
+	(req, res) => {
+		res.json({ contact: 'contact data' });
+	}
+);
+
 //get all contacts for specific user
 router.get(
 	'/',
