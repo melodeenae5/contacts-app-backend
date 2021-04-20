@@ -39,7 +39,7 @@ router.post(
 	passport.authenticate('jwt', { session: false }),
 	(req, res) => {
 		Contact.create({
-			user_id: req.body.user_id,
+			user_id: req.user._id,
 			firstName: req.body.firstName,
 			lastName: req.body.lastName,
 			nickName: req.body.nickName,
@@ -102,7 +102,7 @@ router.put(
 	passport.authenticate('jwt', { session: false }),
 	(req, res) => {
 		Contact.findByIdAndUpdate(req.params.id, {
-			user_id: req.body.user_id,
+			user_id: req.user._id,
 			firstName: req.body.firstName,
 			lastName: req.body.lastName,
 			nickName: req.body.nickName,
