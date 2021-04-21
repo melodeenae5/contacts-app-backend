@@ -27,7 +27,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //cors
-app.use(cors());
+app.use(
+	cors({ origin: [/\.localhost:3000$/, /\.names-and-stuff\.herokuapp\.com$/] })
+);
 
 //basic route
 app.get('/', (req, res) => res.send('Hello world!'));
