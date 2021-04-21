@@ -1,0 +1,1 @@
+web: node generateKeypair.js && npm run app
