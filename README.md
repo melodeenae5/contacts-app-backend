@@ -2,7 +2,7 @@
 
 ## Description
 
-This is the server side of the contacts organizer web app I am building called, "Names 'n Stuff". It is a restful API. Users can create contacts in the database through the frontend(in progress) or through Postman. The app uses Passport JWT user authentication for registration and login of users, as well as for authenticating users for all API routes.
+This is the server side of the contacts organizer web app I built called, "Names 'n Stuff". It is a restful API. Users can create contacts in the database through the frontend(in progress) or through Postman. The app uses Passport JWT user authentication for registration and login of users, as well as for authenticating users for all API routes.
 
 Note: For the user auth portion of the project, I followed the tutorial by FreeCodeCamp called, "User Authentication in Node.js with Passport.js and JWT". I modified the user auth code to fit my needs for this project and coded the rest of the app, including the contacts API routes, independently.
 
