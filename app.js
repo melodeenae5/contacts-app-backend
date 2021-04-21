@@ -27,14 +27,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //cors
-app.use(
-	cors({
-		origin: '*',
-		methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-		preflightContinue: false,
-		optionsSuccessStatus: 204,
-	})
-);
+app.use(cors());
 
 //basic route
 app.get('/', (req, res) => res.send('Hello world!'));

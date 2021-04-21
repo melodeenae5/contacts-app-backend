@@ -1,1 +1,1 @@
-web: node generateKeypair.js && npm run app
+web: node generateKeypair.js && npm run start
