@@ -97,7 +97,7 @@ router.post(
 );
 
 //find contact by id and update
-router.put(
+router.patch(
 	'/:id',
 	passport.authenticate('jwt', { session: false }),
 	(req, res) => {
